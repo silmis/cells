@@ -2,19 +2,20 @@
 
 PROGRAM = cells
 CXX = g++
+LDFLAGS = -Wall -g -std=c++0x
 RM = rm -f
-SRC_NAMES = main.cpp
-SRC_FILES = src/$(SRC_NAMES)
+SRC_FILES = src/main.cpp src/Grid.cpp src/Ruleset.cpp src/Simulator.cpp
+#SRC_FILES = src/$(SRC_NAMES)
 OBJECTS = $(patsubst %.cpp, %.o, $(SRC_FILES))
 TARGET = bin
 
 all: $(PROGRAM)
 
 $(PROGRAM): $(OBJECTS)
-	$(CXX) -o $(TARGET)/$@ $(OBJECTS)
+	$(CXX) $(LDFLAGS) -o $(TARGET)/$@ $(OBJECTS)
 
 %.o: %.cpp
-	$(CXX) -c -o $@ $<
+	$(CXX) -c -o $@ $< -std=c++0x
 
 clean:
 	$(RM) $(OBJECTS)

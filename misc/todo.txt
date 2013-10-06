@@ -1,0 +1,16 @@
+TODO:
+
+Simulator
+    outputs a Run object
+
+Run
+    encompasses the ruleset and the lifetime grid of the run
+
+Ruleset:
+    errors:
+        make sure it works with large inputs
+        make sure rule.length is always states**nbh
+
+Generator:
+    as subclass if ruleset?
+
