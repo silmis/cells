@@ -9,6 +9,6 @@
 typedef std::string string;
 typedef std::vector<string> strVector;
 typedef std::unordered_map<string, string> rulemap;
-typedef std::vector<Grid> lifetime;
+
 
 #endif

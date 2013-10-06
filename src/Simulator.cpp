@@ -1,5 +1,4 @@
 #include "Simulator.h"
-#include "common.h"
 
 Simulator::Simulator(Ruleset *ruleset, Grid *inputGrid, int iterations)
 {

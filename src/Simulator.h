@@ -1,7 +1,10 @@
 #include "common.h"
+#include "Grid.h"
+#include "Ruleset.h"
 
 class Simulator
 {
+    typedef std::vector<Grid> lifetime;
     private:
         Ruleset *ruleset;
         Grid *inputGrid;

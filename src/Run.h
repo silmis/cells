@@ -1,8 +1,10 @@
 #include "common.h"
 
 class Run
-{ 
-    Run(Ruleset *ruleset, lifetime lifetimeGrid);
-    ~Run();
+{
+    typedef std::vector<Grid> lifetime;
+    public:
+        Run(Ruleset *ruleset, lifetime lifetimeGrid);
+        ~Run();
 }
 
