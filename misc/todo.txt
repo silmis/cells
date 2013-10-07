@@ -2,7 +2,6 @@ TODO:
 
 Simulator
     outputs a Run object
-
 Run
     encompasses the ruleset and the lifetime grid of the run
 

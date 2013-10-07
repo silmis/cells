@@ -1,5 +1,3 @@
-
-
 PROGRAM = cells
 CXX = g++
 LDFLAGS = -Wall -g -std=c++0x
