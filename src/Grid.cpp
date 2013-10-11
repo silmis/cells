@@ -12,6 +12,7 @@ Grid::Grid(int size)
 }
 Grid::Grid(const Grid& orig)
 {
+    m_grid = new int[orig.m_gridSize];
     m_gridSize = orig.m_gridSize;
     for (int i=0; i<m_gridSize; i++)
     {   

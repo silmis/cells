@@ -10,7 +10,7 @@ int main ()
 {
     cout << "cell simulator cells\n";
     Grid *grida = new Grid(100);
-    Grid *gridb = grida;
+    Grid *gridb = new Grid(*grida);
     grida->set_grid(5,5);
     gridb->set_grid(5,10);
     cout << "Grid A is " + to_string(grida->get_size()) + "\n";
