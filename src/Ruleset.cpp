@@ -5,54 +5,51 @@ Ruleset::Ruleset(std::string ruleName, int neighbourhoodSize,
     int numberOfStates, std::string rule) 
 {
     rulemap *r = new rulemap; 
-    this->rules = r;
-    this->ruleName = ruleName;
-    this->rule = rule;
-    this->neighbourhoodSize = neighbourhoodSize;
-    this->numberOfStates = numberOfStates;
-    int numberOfNbhs = pow((float)numberOfStates, neighbourhoodSize);
-    this->numberOfNbhs = numberOfNbhs;
+    m_rulemap = r;
+    m_ruleName = ruleName;
+    m_rule = rule;
+    m_neighbourhoodSize = neighbourhoodSize;
+    m_numberOfStates = numberOfStates;
+    m_numberOfNbhs = pow((float)numberOfStates, neighbourhoodSize);
     generate_neighbourhoods();
     populate_rule_map();
 }
 Ruleset::~Ruleset()
 {
-    delete rules;
-    delete neighbourhoods;
+    delete m_rulemap;
+    delete m_neighbourhoods;
 }
 
 void Ruleset::generate_neighbourhoods()
 {
-    neighbourhoods = new strVector;
+    m_neighbourhoods = new strVector;
     string nh="";
     char letters[] = "abcdefghijklmnopqrstuvxyz";
-    int iterationsLeft = neighbourhoodSize;
-    nbh_recursion(nh, numberOfStates, iterationsLeft, letters);
+    int iterationsLeft = m_neighbourhoodSize;
+    nbh_recursion(nh, iterationsLeft, letters);
 }
 
-void Ruleset::nbh_recursion(string nh, int numberOfStates, 
-        int iterationsLeft, char *letters)
+void Ruleset::nbh_recursion(string nh, int iterationsLeft, char *letters)
 {
-    if (nh.length() == neighbourhoodSize)
+    if (nh.length() == m_neighbourhoodSize)
     {
-        neighbourhoods->push_back(nh);
+        m_neighbourhoods->push_back(nh);
     }
     if (iterationsLeft == 0) 
         return;
     iterationsLeft--;
-    for (int i=0; i<numberOfStates; i++) 
+    for (int i=0; i<m_numberOfStates; i++) 
     {
-        nbh_recursion(nh + letters[i], numberOfStates, 
-            iterationsLeft, letters);
+        nbh_recursion(nh + letters[i], iterationsLeft, letters);
     }
 }
 
 void Ruleset::populate_rule_map()
 {
-    for (int i=0; i<numberOfNbhs; i++)
+    for (int i=0; i<m_numberOfNbhs; i++)
     {
-        string r(1,rule[i]);
-        string nbh = (*neighbourhoods)[i];
-        (*rules)[nbh] = r;
+        string r(1, m_rule[i]);
+        string nbh = (*m_neighbourhoods)[i];
+        (*m_rulemap)[nbh] = r;
     }
 }
