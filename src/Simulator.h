@@ -6,8 +6,8 @@
 #include "Grid.h"
 #include "Ruleset.h"
 
-typedef std::unique_ptr<Grid> gridPtr;
-typedef std::vector<gridPtr> lifetime;
+typedef std::unique_ptr<Grid> gridPointer;
+typedef std::vector<gridPointer> lifetime;
 
 class Simulator
 {
@@ -16,6 +16,7 @@ class Simulator
         Grid *m_inputGrid;
         int m_iterations;
         lifetime *m_result;
+        string get_neighbourhood(int index, Grid *grid);
     public:
         Simulator(Ruleset *ruleset, Grid *inputGrid, int iterations);
         ~Simulator();

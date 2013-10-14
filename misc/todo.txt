@@ -8,8 +8,11 @@ Run
 Ruleset:
     errors:
         make sure it works with large inputs
-        make sure rule.length is always states**nbh
+        make sure rulemap length is always states**nbh
+        make sure rule length is always odd!
 
 Generator:
     as subclass if ruleset?
 
+Grid
+    uses char instead of int
