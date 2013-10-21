@@ -2,6 +2,7 @@
 #include "Grid.h"
 #include "Ruleset.h"
 #include "Simulator.h"
+#include "ImageMaker.h"
 
 using namespace std;
 
@@ -9,16 +10,19 @@ using namespace std;
 int main ()
 {
     Grid *grida = new Grid(100);
-    Grid *gridb = new Grid(*grida);
-    grida->set_grid(5,5);
-    gridb->set_grid(5,10);
-    cout << "Grid A is " + to_string(grida->get_size()) + "\n";
-    cout << "Grid B is " + to_string(gridb->get_size()); 
+    grida->set_grid(50,1);
+    //grida->set_grid(7,1);
+    //grida->set_grid(9,1);
+    cout << "Grid A is " + to_string(grida->get_size()) + " long\n";
     cout << "\n";
-    cout << "Grid A[5]: " + to_string((grida->get_grid())[5]) + "\n";
-    cout << "Grid B[5]: " + to_string((gridb->get_grid())[5]) + "\n";
-
-    Ruleset * rs = new Ruleset("myName", 3, 2, "abbbabba");
+    cout << "Grid A[5]: " + to_string(grida->get_grid()[5]) + "\n";
+    cout << "Grid A contains: \n";
+    for (int i=0; i<grida->get_size(); i++) 
+    {
+        cout << to_string(grida->get_grid()[i]) + " ";
+    }
+    cout << "\n";
+    Ruleset * rs = new Ruleset("rule110", 3, 2, "01110110");
     rulemap * rules = rs->get_rules();
     cout << "ruleset: " << endl;
     for (int i=0; i<rs->get_nroOfNbhs(); i++)
@@ -27,9 +31,11 @@ int main ()
         cout << nbh + ": " + (*rules)[nbh] << endl;
     }
     
-    Simulator *s = new Simulator(rs, grida, 100);
+    Simulator *s = new Simulator(rs, grida, 40);
     s->run_simulation();
-  
+    
+    ImageMaker im ();
+     
     //delete grida;
     //delete gridb;
     //delete rs;

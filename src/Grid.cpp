@@ -4,11 +4,13 @@ Grid::Grid()
 {
     m_grid = new int[100];
     m_gridSize = 100;
+    fill_empty();
 }
 Grid::Grid(int size) 
 {
     m_grid = new int[size];
     m_gridSize = size;
+    fill_empty();
 }
 Grid::Grid(const Grid& orig)
 {
@@ -41,4 +43,11 @@ int Grid::get_size()
 void Grid::set_grid(int i, int value) 
 {
     m_grid[i] = value;
+}
+void Grid::fill_empty()
+{
+    for (int i=0; i<m_gridSize; i++)
+    {
+        m_grid[i] = 0;
+    }
 }

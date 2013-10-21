@@ -15,4 +15,4 @@ Generator:
     as subclass if ruleset?
 
 Grid
-    uses char instead of int
+    [no - other way around] uses char instead of int

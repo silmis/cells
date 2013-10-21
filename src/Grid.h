@@ -8,6 +8,7 @@ class Grid {
     private:
         int *m_grid;
         int m_gridSize;
+        void fill_empty();
     public:
         Grid();
         Grid(int size);
