@@ -34,7 +34,8 @@ int main ()
     Simulator *s = new Simulator(rs, grida, 40);
     s->run_simulation();
     
-    ImageMaker im ();
+    ImageMaker *im = new ImageMaker();
+    im->make_img();
      
     //delete grida;
     //delete gridb;
