@@ -2,8 +2,8 @@
 #include "common.h"
 //#include "Grid.h"
 
-#include <opencv2/cxcore.h>
-#include <opencv2/cv.h>
+#include <opencv/cxcore.h>
+#include <opencv/cv.h>
 #include <opencv/highgui.h>
 
 ImageMaker::ImageMaker()

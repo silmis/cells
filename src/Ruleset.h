@@ -7,7 +7,7 @@ class Ruleset {
     private:
         string m_ruleName;
         string m_rule;
-        int m_neighbourhoodSize;
+        unsigned int m_neighbourhoodSize;
         int m_numberOfStates;
         int m_numberOfNbhs;
         rulemap * m_rulemap;
