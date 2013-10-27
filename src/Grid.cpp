@@ -32,22 +32,17 @@ Grid& Grid::operator=(const Grid& orig)
     std::swap(m_gridSize, temp.m_gridSize);
     return *this;
 }
-int* Grid::get_grid() 
-{
-    return m_grid;
-}
-int Grid::get_size() 
-{
-    return m_gridSize;
-}
-void Grid::set_grid(int i, int value) 
-{
-    m_grid[i] = value;
-}
 void Grid::fill_empty()
 {
     for (int i=0; i<m_gridSize; i++)
     {
         m_grid[i] = 0;
+    }
+}
+void Grid::print() 
+{
+    for (int i=0; i<m_gridSize; i++)
+    {
+        std::cout << m_grid[i] << " ";
     }
 }

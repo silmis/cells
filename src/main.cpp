@@ -9,8 +9,12 @@ using namespace std;
 
 int main ()
 {
-    Grid *grida = new Grid(100);
-    grida->set_grid(50,1);
+    Grid *grida = new Grid(1920);
+    grida->set_grid(904,1);
+    grida->set_grid(763,1);
+    grida->set_grid(332,1);
+    grida->set_grid(218,1);
+    grida->set_grid(365,1);
     //grida->set_grid(7,1);
     //grida->set_grid(9,1);
     cout << "Grid A is " + to_string(grida->get_size()) + " long\n";
@@ -31,10 +35,12 @@ int main ()
         cout << nbh + ": " + (*rules)[nbh] << endl;
     }
     
-    Simulator *s = new Simulator(rs, grida, 40);
-    s->run_simulation();
-    
-    ImageMaker *im = new ImageMaker();
+    Simulator *s = new Simulator(rs, grida, 1080);
+    lifetime *lt = s->get_result();
+    //std::cout << "lifetime len " << lt->size() << std::endl;
+    //std::cout << "lt 5th row "; 
+    //lt->at(5)->print();   
+    ImageMaker *im = new ImageMaker(lt);
     im->make_img();
      
     //delete grida;

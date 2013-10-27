@@ -9,7 +9,7 @@ Simulator::Simulator(Ruleset *ruleset, Grid *inputGrid, int iterations)
     m_ruleset = ruleset;
     m_inputGrid = inputGrid;
     m_iterations = iterations;
-    m_result = new lifetime;
+    m_result = new lifetime();
 }
 Simulator::~Simulator()
 {
@@ -77,8 +77,8 @@ void Simulator::run_simulation()
             string key = get_neighbourhood(k, nextIteration);
             string value = (*rules)[key];
             nextIteration->set_grid(k, std::stoi(value));
-            std::cout << value;
+            //std::cout << value;
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
 }

@@ -15,11 +15,18 @@ class Simulator
         string get_neighbourhood(int index, Grid *grid);
         string toroid_left_side(int index, int overlap, int gridSize, string key);
         string toroid_right_side(int index, int overlap, int gridSize, string key);
+        void run_simulation();
     public:
         Simulator(Ruleset *ruleset, Grid *inputGrid, int iterations);
         ~Simulator();
-        void run_simulation();
-        lifetime * get_result() { return m_result; }; 
+        lifetime * get_result() {
+            if (m_result->size() < 1)
+            {
+                run_simulation();
+                return m_result;
+            } 
+            else { return m_result; } 
+        }; 
 };
 
 #endif

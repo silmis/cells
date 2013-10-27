@@ -15,9 +15,10 @@ class Grid {
         Grid(const Grid& orig);
         ~Grid();
         Grid& operator=(const Grid& orig);        
-        int* get_grid();
-        void set_grid(int i, int value);
-        int get_size();
+        int* get_grid() { return m_grid; };
+        void set_grid(int i, int value) { m_grid[i] = value; };
+        int get_size() { return m_gridSize; };
+        void print();
 };
 
 #endif

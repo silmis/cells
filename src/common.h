@@ -2,6 +2,7 @@
 #define __COMMON_H_INCLUDED__
 
 #include <iostream>
+#include <stdio.h>
 #include <unordered_map>
 #include <string>
 #include <vector>
