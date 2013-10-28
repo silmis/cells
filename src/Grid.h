@@ -9,9 +9,11 @@ class Grid {
         int *m_grid;
         int m_gridSize;
         void fill_empty();
+        void fill_random(int states);
     public:
         Grid();
         Grid(int size);
+        Grid(int size, const std::string option);
         Grid(const Grid& orig);
         ~Grid();
         Grid& operator=(const Grid& orig);        

@@ -19,6 +19,7 @@ class Simulator
     public:
         Simulator(Ruleset *ruleset, Grid *inputGrid, int iterations);
         ~Simulator();
+        Ruleset * get_ruleset() { return m_ruleset; }
         lifetime * get_result() {
             if (m_result->size() < 1)
             {
