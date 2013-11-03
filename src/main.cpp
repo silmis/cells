@@ -38,16 +38,7 @@ int main ()
     }
     
     Simulator *s = new Simulator(rs, grida, 1080);
-    //lifetime *lt = s->get_result();
-    //std::cout << "lifetime len " << lt->size() << std::endl;
-    //std::cout << "lt 5th row "; 
-    //lt->at(5)->print();   
     ImageMaker *im = new ImageMaker(s);
     im->make_img();
-     
-    //delete grida;
-    //delete gridb;
-    //delete rs;
-    //delete s;
     return 0;
 }
