@@ -19,7 +19,7 @@ ImageMaker::~ImageMaker()
     delete m_sim;
     delete m_lt;
 }
-void ImageMaker::make_img()
+void ImageMaker::make_img(string outPath)
 {
     cv::Mat image = cv::Mat(m_gridYLen, m_gridXLen, CV_8UC3);
     for (unsigned int y=0; y<m_gridYLen; y++)
@@ -35,6 +35,7 @@ void ImageMaker::make_img()
         }
     }
     string rulename = m_sim->get_ruleset()->get_rule_name();
-    cv::imwrite("/home/thitkone/Projects/play/cells/build/src/"+rulename+".png", image);
+    //cv::imwrite("/home/thitkone/Projects/play/cells/build/src/"+rulename+".png", image);
+    cv::imwrite(outPath+"/"+rulename+".png", image);
 }
 

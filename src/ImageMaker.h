@@ -14,7 +14,7 @@ class ImageMaker
     public:
         ImageMaker(Simulator *sim);
         ~ImageMaker();
-        void make_img();
+        void make_img(string outPath);
 };
 
 #endif
